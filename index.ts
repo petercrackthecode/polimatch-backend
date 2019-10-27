@@ -1,9 +1,7 @@
 import express from "express";
 import randomstring from "randomstring";
+import authToken from "./key_file";
 var request = require("request");
-
-const authToken =
-  "ya29.c.Kl6pB2PtILYPt4jIB92IfBL8B2aqBIOjald6fS-HSXyOuALdF31cfIKu1qAxczbqhng7-W2KfrYozMpxC3otOaTU-1pcc9l2aZiPaaeC00bJOvPwjhqmEGPyTqIcXIaZ";
 
 const handleSubmit = async (input: string, key: string) => {
   var headers = {
