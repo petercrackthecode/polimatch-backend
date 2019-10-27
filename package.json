@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
+    "randomstring": "^1.1.5",
+    "request": "^2.88.0",
+    "scrape-twitter": "^0.11.1",
     "typescript": "^3.6.4"
   }
 }
