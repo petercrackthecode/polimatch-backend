@@ -20,14 +20,18 @@ const handleSubmit = async (input, key) => {
 
   var options = {
     url:
-      "https://automl.googleapis.com/v1beta1/projects/795970644708/locations/us-central1/models/TCN1424285372388474880:predict",
+      "https://automl.googleapis.com/v1beta1/projects/795970644708/locations/us-central1/models/TCN1790202842112327680:predict",
     method: "POST",
     headers: headers,
     body: dataString
   };
 
   function callback(error, response, body) {
+    console.log(error);
+    console.log("This is working@");
+    console.log(response.statusCode);
     if (!error && response.statusCode == 200) {
+      console.log(body);
       store[key].response = JSON.parse(body);
       store[key].status = true;
     }
