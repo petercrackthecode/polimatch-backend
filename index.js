@@ -1,9 +1,9 @@
-import express from "express";
-import randomstring from "randomstring";
-import authToken from "./key_file";
+var express = require("express");
+var randomstring = require("randomstring");
+var authToken = require("./key_file");
 var request = require("request");
 
-const handleSubmit = async (input: string, key: string) => {
+const handleSubmit = async (input, key) => {
   var headers = {
     Authorization: `Bearer ${authToken}`,
     "Content-Type": "application/json"
@@ -40,15 +40,7 @@ const handleSubmit = async (input: string, key: string) => {
 const app = express();
 const port = 3000;
 
-interface StoreType {
-  [key: string]: {
-    input: string;
-    status: boolean;
-    response?: string;
-  };
-}
-
-var store: StoreType = {};
+var store = {};
 
 app.get("/submit", (req, res) => {
   const input = req.query.data;
